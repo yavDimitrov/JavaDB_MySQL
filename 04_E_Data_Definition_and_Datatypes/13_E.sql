@@ -12,3 +12,9 @@ CREATE TABLE `addresses` (
 `town_id` INT NOT NULL
  
 );
+
+CREATE TABLE `departments` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL
+);
+

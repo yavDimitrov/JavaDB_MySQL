@@ -17,4 +17,16 @@ CREATE TABLE `products` (
 `category_id` INT NOT NULL
 );
 
+USE `gamebar`;
 
+INSERT INTO `employees`(`first_name`, `last_name`) VALUES ("Pesho", "Pesho");
+INSERT INTO `employees`(`first_name`, `last_name`) VALUES 
+("Gosho", "Gosho"),
+("Gergana", "Gergana");
+
+ 
+ALTER TABLE `employees`
+ADD COLUMN `not_empty_date` DATE NOT NULL;
+
+ALTER TABLE `employees`
+MODIFY COLUMN `middle_name` VARCHAR(100);

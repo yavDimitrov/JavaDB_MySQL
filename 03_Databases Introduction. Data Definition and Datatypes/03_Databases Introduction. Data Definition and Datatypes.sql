@@ -30,3 +30,14 @@ ADD COLUMN `not_empty_date` DATE NOT NULL;
 
 ALTER TABLE `employees`
 MODIFY COLUMN `middle_name` VARCHAR(100);
+
+USE `gamebar`;
+
+ALTER TABLE `products`
+ADD CONSTRAINT `idx_category_id`
+INDEX(`category_id`);categories
+
+ALTER TABLE `categories`
+ADD CONSTRAINT `fk_categories_id_products_category_id`
+FOREIGN KEY(`id`) REFERENCES `products`(`category_id`);
+

@@ -11,3 +11,8 @@ SELECT
     FROM `employees`
     WHERE `department_id` = 1 OR `department_id` = 2
     ORDER BY `id`;
+    
+        SELECT `id`, `first_name`, `department_id` 
+    FROM `employees`
+    WHERE `department_id` BETWEEN 1 and 3
+    ORDER BY `id`;

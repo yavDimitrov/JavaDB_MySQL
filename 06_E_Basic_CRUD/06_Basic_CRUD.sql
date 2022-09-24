@@ -46,3 +46,8 @@ WHERE `manager_id` IS NULL;
  SELECT `first_name`, `last_name`, `salary` FROM `employees`
  WHERE `salary` > 50000
  ORDER BY `salary` DESC;
+ 
+ #12.1. Find 5 Best Paid Employees
+ SELECT `first_name`, `last_name` FROM `employees`
+ ORDER BY `salary` DESC
+ LIMIT 5;

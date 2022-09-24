@@ -55,3 +55,7 @@ WHERE `manager_id` IS NULL;
  #13.1. Find All Employees Except Marketing
  SELECT `first_name`, `last_name` FROM `employees`
  WHERE `department_id` != 4;
+ 
+ #14. 1. Sort Employees Table
+ SELECT * FROM `employees`
+ ORDER BY `salary` DESC, `first_name`, `last_name` DESC, `middle_name`, `employee_id`;

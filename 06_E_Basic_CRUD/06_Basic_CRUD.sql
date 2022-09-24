@@ -59,3 +59,10 @@ WHERE `manager_id` IS NULL;
  #14. 1. Sort Employees Table
  SELECT * FROM `employees`
  ORDER BY `salary` DESC, `first_name`, `last_name` DESC, `middle_name`, `employee_id`;
+ 
+ #15.1. Create View Employees with Salaries 
+ CREATE VIEW `v_employees_salaries` AS
+	SELECT `first_name`, `last_name`, `salary`
+	FROM `employees`;
+    
+SELECT * FROM `v_employees_salaries`;

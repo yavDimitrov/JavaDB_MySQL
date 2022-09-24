@@ -37,3 +37,11 @@ SELECT
     ORDER BY `id`;
     
     SELECT * FROM `employees_overView`;
+    
+    CREATE VIEW `v_top_paid_e,ployee` AS
+		SELECT *
+        FROM `employees`
+        ORDER BY `salary` DESC
+        LIMIT 1;
+        
+	SELECT * FROM `v_top_paid_e,ployee`;

@@ -110,5 +110,9 @@ SELECT `country_name`, `country_code`,
 IF (`currency_code` = 'EUR', 'Euro', 'Not Euro') AS `currency` 
 FROM `countries`
 ORDER BY `country_name`;
+
+#24 1. All Diablo Characters
+SELECT `name` FROM `characters`
+	ORDER BY `name`;
 	
     

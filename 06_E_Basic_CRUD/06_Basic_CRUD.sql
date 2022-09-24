@@ -73,4 +73,8 @@ CREATE VIEW `v_employees_job_titles` AS
     FROM `employees`;
     
 SELECT * FROM `v_employees_job_titles`;
+
+#17 1. Distinct Job Titles 
+SELECT DISTINCT `job_title` FROM `employees`
+	ORDER BY `job_title`;
     

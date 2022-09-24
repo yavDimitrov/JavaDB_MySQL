@@ -32,4 +32,8 @@ SELECT `first_name`, `last_name`, `job_title` FROM `employees`
 WHERE `salary` BETWEEN 20000 and 30000
 ORDER BY `employee_id`;
 
-#9.
+#9.1. Find Names of All Employees
+SELECT CONCAT(`first_name`, ' ', `middle_name`, ' ', `last_name`) 
+AS `Full name` 
+FROM `employees`
+WHERE `salary` IN (25000, 14000, 12500, 23600);

@@ -26,3 +26,8 @@ SELECT DISTINCT (`salary`) FROM `employees`;
 SELECT * FROM `employees`
 WHERE `job_title` = 'Sales Representative'
 ORDER BY `employee_id`;
+
+#8.1. Find Names of All Employees by salary in Range
+SELECT `first_name`, `last_name`, `job_title` FROM `employees`
+WHERE `salary` BETWEEN 20000 and 30000
+ORDER BY `employee_id`;

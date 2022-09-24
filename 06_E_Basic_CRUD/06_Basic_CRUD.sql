@@ -18,3 +18,6 @@ ORDER BY `employee_id`;
 SELECT CONCAT(`first_name`, '.', `last_name`, '@softuni.bg')
 AS `full_email_address`
 FROM `employees`;
+
+#6.1. Find All Different Employee's Salaries
+SELECT DISTINCT (`salary`) FROM `employees`;

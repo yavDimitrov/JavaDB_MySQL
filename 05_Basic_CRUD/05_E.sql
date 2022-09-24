@@ -45,3 +45,9 @@ SELECT
         LIMIT 1;
         
 	SELECT * FROM `v_top_paid_e,ployee`;
+    
+    DELETE FROM `employees`
+    WHERE `department_id` IN (1,2);
+    
+    SELECT*FROM `employees`
+    ORDER BY `id`;

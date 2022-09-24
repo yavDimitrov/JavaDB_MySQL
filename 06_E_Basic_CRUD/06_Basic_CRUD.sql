@@ -94,4 +94,14 @@ UPDATE `employees`
     WHERE `department_id` IN (1,2,4,11);
     
 SELECT `salary` FROM `employees`;
+
+#21.1. All Mountain Peaks 
+SELECT `peak_name` FROM `peaks`
+	ORDER BY `peak_name`;
+    
+#22. 1. Biggest Countries by Population 
+SELECT `country_name`, `population` FROM `countries`
+	WHERE `continent_code` = 'EU'
+    ORDER BY `population` DESC, `country_name`
+    LIMIT 30;
     

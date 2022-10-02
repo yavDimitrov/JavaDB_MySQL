@@ -9,6 +9,12 @@
     WHERE `last_name` LIKE '%ei%'
     ORDER BY `employee_id`;
     
+#2_2. Find Names of All Employees by Last Name _EXAMPLE CASE SENSITIVE
+	SELECT `first_name`, `last_name` FROM `employees`
+    WHERE `last_name` COLLATE utf8_....... LIKE 'Sa%'
+    ORDER BY `employee_id`;
+    
+    
 #3. Find First Names of All Employees
 	/*   SELECT `first_name` FROM `employees`
     WHERE (`department_id`= 3 OR `department_id` = 10)
@@ -60,6 +66,10 @@
 #09. Length of Last Name
 		SELECT `first_name`, `last_name` FROM `employees`
         WHERE char_length(`last_name`) = 5;
+        
+#10. Countries Holding 'A'
+		
+		
         
 
 	

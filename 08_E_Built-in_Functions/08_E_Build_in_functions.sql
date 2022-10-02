@@ -87,6 +87,14 @@
         WHERE YEAR(`start`) IN (2011, 2012)
         ORDER BY `start`, `name`
         LIMIT 50;
+        
+#13. User Email Providers
+		SELECT `user_name`, SUBSTRING(`email`, locate('@', `email`) + 1) AS `Email Provider` FROM `users`
+        ORDER BY `Email Provider`, `user_name`;
+        
+#14. Get Users with IP Address Like Pattern
+		
+		  
  		
 		 
 		

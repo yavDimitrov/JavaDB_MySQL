@@ -35,10 +35,20 @@
     
 #06. Find Towns Starting With
 	SELECT * FROM `towns`
+		#WHERE `name` REGEXP '^[MKBE]' 
     WHERE 
 	   `name` LIKE 'm%'
 	OR `name` LIKE 'k%'
     OR `name` LIKE 'b%'
     OR `name` LIKE 'e%'
     ORDER BY `name`;
+    
+#07. Find Towns Not Starting With
+	SELECT * FROM `towns`
+    WHERE
+		`name` NOT LIKE 'r%'
+        AND `name` NOT LIKE 'b%'
+        AND `name` NOT LIKE 'd%'
+        ORDER BY `name`;
+
 	

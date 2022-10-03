@@ -108,7 +108,7 @@
         
         CASE
         WHEN `duration` <= 3 THEN 'Extra Short'
-        WHEN `duration` <+ 6 THEN 'Short'
+        WHEN `duration` <= 6 THEN 'Short'
         WHEN `duration` <= 10 THEN 'Long'
         ELSE 'Extra Long'
         END

@@ -10,3 +10,6 @@
     LIMIT 1 offset 1;
     
 #03. Longest Magic Wand per Deposit Groups
+	SELECT `deposit_group`, MAX(`magic_wand_size`) AS 'longest_magic_wand' FROM `wizzard_deposits`
+    GROUP BY `deposit_group`
+    order by `longest_magic_wand`, `deposit_group`;

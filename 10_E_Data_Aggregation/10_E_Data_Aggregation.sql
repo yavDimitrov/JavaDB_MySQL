@@ -114,6 +114,15 @@
 	#15. Employees Count Salaries
 		SELECT COUNT(*) FROM `employees`
         WHERE `manager_id` IS NULL;
+        
+	#16. 3rd Highest Salary
+		SELECT `department_id` , (
+        
+        ) AS 'third_highest_salary' FROM `employees`
+        GROUP BY `department_id`
+        HAVING `third_highest_salary`  IS NOT NULL
+        ORDER BY `department_id`;
+		
 		
 		 
 		 

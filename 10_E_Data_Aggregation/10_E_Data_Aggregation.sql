@@ -111,6 +111,9 @@
         HAVING `max_salary` NOT BETWEEN 30000 AND 70000
         ORDER BY `department_id`;
 
+	#15. Employees Count Salaries
+		SELECT COUNT(*) FROM `employees`
+        WHERE `manager_id` IS NULL;
 		
 		 
 		 

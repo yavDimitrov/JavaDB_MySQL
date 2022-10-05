@@ -99,6 +99,10 @@
         UPDATE `high_paid_employees`
         SET `salary` = `salary` + 5000
         WHERE `department_id` = 1;
+        
+        SELECT `department_id`, AVG(`salary`) AS 'avg_salary' FROM `high_paid_employees`
+        GROUP BY `department_id`
+        ORDER BY `deparment_id`;
 		
 		 
 		 

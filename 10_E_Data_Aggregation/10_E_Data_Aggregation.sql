@@ -37,4 +37,5 @@
     GROUP BY `deposit_group`
     HAVING `total_sum` < 150000
     ORDER BY `total_sum` DESC;
+  
 

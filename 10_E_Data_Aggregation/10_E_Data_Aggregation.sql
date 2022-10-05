@@ -87,6 +87,18 @@
         GROUP BY `department_id`
         HAVING `department_id` IN (2,5,7)
         ORDER BY `department_id`
+        
+	#13. Employees Average Salaries
+		CREATE TABLE `high_paid_employees` AS
+        SELECT * FROM `employees`
+        WHERE `salary` > 30000;
+        
+        DELETE FROM `high_paid_employees`
+        WHERE `manager_id` = 42;
+        
+        UPDATE `high_paid_employees`
+        SET `salary` = `salary` + 5000
+        WHERE `department_id` = 1;
 		
 		 
 		 

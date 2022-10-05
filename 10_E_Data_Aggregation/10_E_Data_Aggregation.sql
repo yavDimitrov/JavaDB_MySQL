@@ -64,9 +64,18 @@
 		WHEN `age` BETWEEN 51 AND 60 THEN '[51-60]'
         WHEN `age` >= 61 THEN '[61+]'
 	END
-    ) AS 'age_group', COUNT(`age`) AS 'wizzards_count' FROM `wizzard_deposits`
+    ) AS 'age_group', COUNT(`age`) AS 'wizzards_count' FROM `wizzard_deposits` 
+    #) AS 'age_group', COUNT(`age`) AS 'wizzards_count' FROM `wizzard_deposits`
      GROUP BY `age_group`
      ORDER BY `age_group`;
+     
+     #10. First Letter
+		SELECT LEFT(`first_name`, 1) AS 'first_letter' FROM `wizzard_deposits` 
+        WHERE `deposit_group` = 'Troll Chest'
+        GROUP BY `first_letter`
+        ORDER BY `first_letter`;
+		 
+		
 	 
 	
 	 

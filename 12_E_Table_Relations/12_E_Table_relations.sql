@@ -63,3 +63,22 @@
         (106, 'Nova', 3);
         
 	#03. Many-To-Many Relationship
+    CREATE DATABASE `school`;
+    USE `school`;
+    
+    CREATE TABLE `students` (
+    `student_id` INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(70) NOT NULL
+    );
+    
+    INSERT INTO `students` (`name`)
+			VALUES
+				('Mila'),
+                ('Toni'),
+                ('Ron');
+    
+    
+    
+    
+    
+    

@@ -27,4 +27,9 @@ SELECT
 JOIN
 `campers` AS c ON v.driver_id = c.id;
 
+#3. SoftUni Hiking
+	SELECT * FROM routes,campers;
+
+
+
 

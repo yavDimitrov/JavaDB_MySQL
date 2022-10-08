@@ -76,6 +76,22 @@
 				('Mila'),
                 ('Toni'),
                 ('Ron');
+                
+                
+	CREATE TABLE `exams` (
+		`exam_id` INT PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(100) NOT NULL
+    );
+    
+    ALTER TABLE `exams` AUTO_INCREMENT = 101;   
+    
+
+    
+    INSERT INTO `exams` (`name`)
+		VALUES
+			('Spring MVC'),
+            ('Neo4j'),
+            ('Oracle 11g');
     
     
     

@@ -23,3 +23,9 @@
     REFERENCES `passports` (`passport_id`)
     );
     
+    INSERT INTO `people` (`first_name`, `salary`, `passport_id`)
+		VALUES
+			(`Roberto`, 43300.00, 102),
+            ('Tom', 56100.00, 103),
+            ('Yana', 60200.00, 101);
+    

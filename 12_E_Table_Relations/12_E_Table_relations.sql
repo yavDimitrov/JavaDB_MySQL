@@ -144,7 +144,22 @@
     ADD CONSTRAINT fk
     FOREIGN KEY (`manager_id`)
     REFERENCES `teachers`(`teacher_id`);
- 
+    
+    #06. University Database
+    
+    CREATE DATABASE `university`;
+    USE `university`;
+    
+    CREATE TABLE `subjects` (
+    `subject_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+    `subject_name` VARCHAR(50) NOT NULL
+    );
+    
+    CREATE TABLE `majors` (
+		`major_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+        `name` VARCHAR(50)
+    );
+
     
     
     

@@ -101,6 +101,24 @@
 	WHERE c.`country_code` IN ('BG', 'RU', 'US')
 	GROUP BY c.`country_code`
 	ORDER BY `mountain_range` DESC;
+    
+#14. Countries with Rivers 
+	SELECT c.`country_name`, r.`river_name`
+	FROM `countries` AS c
+	LEFT JOIN `countries_rivers` AS cr ON c.`country_code` = cr.`country_code`
+	LEFT JOIN `rivers` AS r ON r.`id` = cr.`river_id`
+	WHERE c.`continent_code` = 'AF'
+	ORDER BY c.`country_name`
+	LIMIT 5;
+    
+#16. Countries without any Mountains
+	SELECT COUNT(c.`country_code`)
+	FROM `countries` AS c
+	LEFT JOIN `mountains_countries` AS mc ON c.`country_code` = mc.`country_code`
+	LEFT JOIN `mountains` AS m ON mc.`mountain_id` = m.`id`
+	WHERE m.`id` IS NULL;
+		
+
 
 		
     

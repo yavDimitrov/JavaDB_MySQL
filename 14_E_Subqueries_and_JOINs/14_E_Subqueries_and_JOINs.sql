@@ -62,4 +62,6 @@
 	JOIN `projects` AS p ON ep.`project_id` = p.`project_id`
     WHERE e.`employee_id` = 24
     ORDER BY p.`name`;
+    
+#09. Employee Manager
 	 

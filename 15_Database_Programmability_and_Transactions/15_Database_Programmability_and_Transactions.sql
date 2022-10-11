@@ -15,6 +15,18 @@ WHERE `e`.`address_id` IN (
         )
 );
 
+DELIMITER $$
+CREATE FUNCTION ufn_count_employess_by_town()
+RETURNS int
+DETERMINISTIC
+BEGIN
+	-- DECLARE count_by_town INT;
+    -- SET count_by_town := (SELECT COUNT(*) FROM `employees`);
+    -- RETURN count_by_town;
+    
+    RETURN (SELECT count(*) FROM `employees`);
+    END$$
+
 
 
 

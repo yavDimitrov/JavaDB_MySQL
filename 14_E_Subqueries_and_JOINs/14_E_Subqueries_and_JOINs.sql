@@ -102,6 +102,11 @@
 	GROUP BY c.`country_code`
 	ORDER BY `mountain_range` DESC;
     
+    SELECT c.`country_code`, COUNT(m.`mountain_range`) AS `mountain_range` FROM `mountains` AS m 
+	INNER JOIN `mountains_countries` AS c ON m.`id` = c.`mountain_id`
+	WHERE c.`country_code` IN ('BG', 'RU', 'US')
+	ORDER BY `mountain_range` DESC;
+    
 #14. Countries with Rivers 
 	SELECT c.`country_name`, r.`river_name`
 	FROM `countries` AS c
@@ -117,7 +122,27 @@
 	LEFT JOIN `mountains_countries` AS mc ON c.`country_code` = mc.`country_code`
 	LEFT JOIN `mountains` AS m ON mc.`mountain_id` = m.`id`
 	WHERE m.`id` IS NULL;
+    
+	   
+    SELECT COUNT(c.`country_code`)
+	FROM `countries` AS c
+	LEFT JOIN `mountains_countries` AS mc ON c.`country_code` = mc.`country_code`
+	WHERE mc.`mountain_id` IS NULL;
 		
+        
+        #17. Highest Peak and Longest River by Country
+		SELECT c.`country_name`, MAX(p.`elevation`) AS 'highest_peak_elevation',MAX(r.`length`) AS 'longest_river_length'
+		FROM `countries` AS c
+		LEFT JOIN `mountains_countries` AS mc ON c.`country_code` = mc.`country_code`
+		LEFT JOIN `peaks` AS p ON mc.`mountain_id` = p.`mountain_id`
+		LEFT JOIN `countries_rivers` AS cr ON c.`country_code` = cr.`country_code`
+		LEFT JOIN `rivers` AS r ON cr.`river_id` = r.`id`
+		GROUP BY c.`country_name`
+		ORDER BY `highest_peak_elevation` DESC , `longest_river_length` DESC , c.`country_name`
+		LIMIT 5;
+        
+	
+
 
 
 		

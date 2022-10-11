@@ -48,6 +48,10 @@ JOIN
             
             
 #5* SCHEME
+
+CREATE SCHEMA five;
+USE five;
+
 CREATE TABLE clients (
 id INT(11) PRIMARY KEY AUTO_INCREMENT,
 client_name VARCHAR (100)
@@ -67,8 +71,10 @@ project_id INT
 
 ALTER TABLE projects
 ADD CONSTRAINT fk_projects_clients
-FOREIGN KEY (project_id)
-REFERENCES clients(id),
+FOREIGN KEY (client_id)
+REFERENCES clients(id);
+
+ALTER TABLE projects
 ADD CONSTRAINT fk_projects_employees
 FOREIGN KEY (project_leader_id)
 REFERENCES employees(id);

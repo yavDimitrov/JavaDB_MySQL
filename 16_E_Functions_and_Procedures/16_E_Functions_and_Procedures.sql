@@ -19,5 +19,17 @@ BEGIN
 END &&  
 DELIMITER ;
 
+#3. Town Names Starting With
+DELIMITER && 
+CREATE PROCEDURE usp_get_towns_starting_with (town_substring VARCHAR(50))
+BEGIN
+  SELECT `name` 
+  FROM `towns`
+  WHERE `name` like CONCAT(town_substring,'%')
+  # WHERE LEFT (`name`, LENGTH(`starts_with`)) = `starts_with`
+  order by `name`;
+END &&  
+DELIMITER ;
+
 
 

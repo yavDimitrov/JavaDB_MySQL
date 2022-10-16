@@ -32,7 +32,18 @@ CREATE TABLE `stadiums` (
 CONSTRAINT fk_stadiums_town
 FOREIGN KEY (`town_id`)
 REFERENCES `towns`(`id`)
-);   
+); 
+
+CREATE TABLE `teams` (
+`id` INT AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(45) NOT NULL,
+`established` DATE  NOT NULL,
+`fan_base` BIGINT  NOT NULL DEFAULT 0,
+`stadium_id` INT  NOT NULL,
+CONSTRAINT fk_teams_stadiums
+FOREIGN KEY (`stadium_id`)
+REFERENCES `stadiums`(`id`)
+);  
 
 
 

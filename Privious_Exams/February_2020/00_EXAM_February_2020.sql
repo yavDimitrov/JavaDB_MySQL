@@ -43,8 +43,18 @@ CREATE TABLE `teams` (
 CONSTRAINT fk_teams_stadiums
 FOREIGN KEY (`stadium_id`)
 REFERENCES `stadiums`(`id`)
-);  
+); 
 
+CREATE TABLE `skills_data` (
+`id` INT AUTO_INCREMENT PRIMARY KEY,
+`dribbling` INT DEFAULT 0,
+`pace` INT DEFAULT 0,
+`passing` INT DEFAULT 0,
+`shooting` INT DEFAULT 0,
+`speed` INT DEFAULT 0,
+`strength` INT DEFAULT 0
+);
+ 
 
 
  

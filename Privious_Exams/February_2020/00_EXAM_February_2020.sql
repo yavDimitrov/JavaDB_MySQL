@@ -72,7 +72,9 @@ REFERENCES `players`(`id`),
 
 CONSTRAINT fk_PK_coach
 FOREIGN KEY (`coach_id`)
-REFERENCES `coaches`(`id`)
+REFERENCES `coaches`(`id`),
+
+CONSTRAINT pk_mapping PRIMARY KEY (`player_id`, `coach_id`)
 );
 
 CREATE TABLE `players` (

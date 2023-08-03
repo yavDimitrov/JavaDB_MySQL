@@ -31,3 +31,28 @@ GROUP BY c.`name`
 HAVING `movies_count` >= 7
 ORDER BY c.`name` DESC
 ;
+
+#9. Rating system
+SELECT 	m.`title`,
+		(CASE
+				WHEN mi.`rating` <= 4 THEN 'poor'
+                WHEN mi.`rating` <= 7 THEN 'good'
+                ELSE 'excellent'
+		END) AS 'rating',
+        IF(mi.`has_subtitles`=1, 'english', '-') AS 'subtitles',
+        mi.`budget`
+FROM `movies` AS m
+JOIN `movies_additional_info` AS mi ON m.`movie_info_id` = mi.`id`
+ORDER BY mi.`budget` DESC;
+
+#9.10 Rating system
+SELECT 	m.`title`,
+		(IF	mi.`rating` <= 4 THEN 'poor'
+			ELSEIF mi.`rating` <= 7 THEN 'good'
+            ELSE 'excellent'
+		END IF) AS 'rating',
+        IF(mi.`has_subtitles`=1, 'english', '-') AS 'subtitles',
+        mi.`budget`
+FROM `movies` AS m
+JOIN `movies_additional_info` AS mi ON m.`movie_info_id` = mi.`id`
+ORDER BY mi.`budget` DESC;

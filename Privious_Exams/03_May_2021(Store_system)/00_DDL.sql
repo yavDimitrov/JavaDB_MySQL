@@ -11,8 +11,8 @@ CREATE TABLE addresses (
 id INT AUTO_INCREMENT PRIMARY KEY,
 `name` VARCHAR(50) NOT NULL UNIQUE,
 town_id INT NOT NULL,
-CONSTRAINT
-FOREIGN KEY fk_town_address (town_id)
+CONSTRAINT fk_town_address
+FOREIGN KEY (town_id)
 REFERENCES towns(id)
 );
 
@@ -22,8 +22,8 @@ id INT PRIMARY KEY AUTO_INCREMENT,
 rating FLOAT NOT NULL,
 has_parking TINYINT(1) DEFAULT 0,
 address_id INT NOT NULL,
-CONSTRAINT 
-FOREIGN KEY fk_sotre_address (address_id)
+CONSTRAINT fk_sotre_address
+FOREIGN KEY (address_id)
 REFERENCES addresses(id)
 );
 
@@ -36,10 +36,49 @@ salary DECIMAL(19,2) DEFAULT 0,
 hire_date DATE NOT NULL, 
 manager_id INT,
 store_id INT NOT NULL,
-CONSTRAINT
-FOREIGN KEY FK_employee_store (store_id)
+CONSTRAINT FK_employee_store
+FOREIGN KEY (store_id)
 REFERENCES stores(id),
-CONSTRAINT
-FOREIGN KEY SR_employee_manager (manager_id)
+CONSTRAINT SR_employee_manager
+FOREIGN KEY  (manager_id)
 REFERENCES employees(id)
+);
+
+CREATE TABLE pictures (
+id INT AUTO_INCREMENT PRIMARY KEY,
+url VARCHAR(100) NOT NULL,
+added_on DATETIME NOT NULL
+);
+
+CREATE TABLE categories (
+id INT AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(40) NOT NULL UNIQUE
+);
+
+CREATE TABLE products (
+id INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(40) NOT NULL UNIQUE,
+best_before DATE,
+price DECIMAL(10, 2) NOT NULL,
+`description` TEXT,
+category_id INT NOT NULL,
+picture_id INT NOT NULL,
+CONSTRAINT FK_products_categories
+FOREIGN KEY  (category_id)
+REFERENCES categories (id),
+CONSTRAINT FK_products_pictures
+FOREIGN KEY (picture_id)
+REFERENCES pictures (id)
+);
+
+CREATE TABLE products_stores (
+product_id INT NOT NULL ,
+store_id INT NOT NULL,
+PRIMARY KEY (product_id, store_id),
+CONSTRAINT FK_products_stores_products
+FOREIGN KEY (product_id)
+REFERENCES products (id),
+CONSTRAINT FK_products_stores_stores
+FOREIGN KEY (store_id)
+REFERENCES stores (id)
 );

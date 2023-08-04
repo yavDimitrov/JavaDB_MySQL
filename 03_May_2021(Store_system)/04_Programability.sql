@@ -14,3 +14,23 @@ RETURN (SELECT CONCAT(e.first_name, ' ', e.middle_name , '. ', e.last_name, ' wo
 END$$
 
   SELECT udf_top_paid_employee_by_store('Stronghold') as 'full_info';
+  
+ #11. Update product price by address
+ 
+ DELIMITER $$
+  CREATE PROCEDURE udp_update_product_price (address_name VARCHAR (50))
+BEGIN
+	DECLARE increase_level INT;
+    IF address_name LIKE '0%' THEN SET increase_level = 100;
+		ELSE SET increase_level = 200;
+		END IF;
+        
+	UPDATE products p SET price = price + increase_level
+		WHERE p.id IN (
+			SELECT ps.product_id FROM addresses AS a
+            JOIN stores AS s ON a.id =s.address_id
+            JOIN products_stores AS ps ON ps.store_id = s.id
+            WHERE a.`name` = address_name
+        );
+
+END $$
